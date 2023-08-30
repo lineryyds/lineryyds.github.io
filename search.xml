@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Lin-Blog手册</title>
+      <link href="/2023/08/30/Lin-Blog%E6%89%8B%E5%86%8C/"/>
+      <url>/2023/08/30/Lin-Blog%E6%89%8B%E5%86%8C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Lin-Blog-搭建与维护手册"><a href="#Lin-Blog-搭建与维护手册" class="headerlink" title="Lin-Blog 搭建与维护手册"></a>Lin-Blog 搭建与维护手册</h1><h3 id="首先声明一点："><a href="#首先声明一点：" class="headerlink" title="首先声明一点："></a>首先声明一点：</h3><h4 id="这个手册是写给我自己看的，并不是为了教会谁！"><a href="#这个手册是写给我自己看的，并不是为了教会谁！" class="headerlink" title="这个手册是写给我自己看的，并不是为了教会谁！"></a>这个手册是写给我自己看的，并不是为了教会谁！</h4><h1 id="用到工具-包括编辑-："><a href="#用到工具-包括编辑-：" class="headerlink" title="用到工具(包括编辑)："></a>用到工具(包括编辑)：</h1><h2 id="必须"><a href="#必须" class="headerlink" title="必须"></a>必须</h2><h3 id="Gitee"><a href="#Gitee" class="headerlink" title="Gitee"></a><a href="https://gitee.com/">Gitee</a></h3><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a><a href="https://git-scm.com/download/win">Git</a></h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>全部安装设置默认即可，在桌面右键菜单出现以下菜单即可：</p><p><img src="https://pic.imgdb.cn/item/64ddb60a661c6c8e54f1d796.png"></p><h3 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a><a href="https://nodejs.org/zh-cn">nodejs</a></h3><h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><p>推荐长期维护版本，安装完成后cmd窗口输入<strong>node -v</strong>返回版本号即可：</p><p><img src="https://pic.imgdb.cn/item/64ddb8c5661c6c8e54fa2874.png"></p><h2 id="可选"><a href="#可选" class="headerlink" title="可选"></a>可选</h2><p>编辑器</p><h3 id="Notepad"><a href="#Notepad" class="headerlink" title="Notepad++"></a><a href="https://pan.xiaomuxi.cn/s/kzxCN">Notepad++</a></h3><h3 id="HBuilder-X"><a href="#HBuilder-X" class="headerlink" title="HBuilder X"></a><a href="https://pan.xiaomuxi.cn/s/QOEiM">HBuilder X</a></h3><p>可以选择其他编辑器，不需要完全一致！</p><h1 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h1><h2 id="主体"><a href="#主体" class="headerlink" title="主体"></a>主体</h2><p>创建博客所在文件夹（通常为<strong>Hexo</strong>），</p><p>在文件夹里右键运行<font color=#900><em><strong>Git Bash Here</strong></em>（Git窗口）</font>，</p><p>在Git窗口输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>再输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure><p>再进入生成的<em><strong>blog</strong></em>文件夹</p><p>输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><p>这时候就已经可以运行了，输入<code>hexo s</code>可以运行博客，默认在4000端口开放预览。</p><p><img src="https://pic.imgdb.cn/item/64dc1ef6661c6c8e54c32dda.png"></p><h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>在hexo官网点击主题，找到想要的主题点击（点击图片是预览，点击文字是教程）查看教程！</p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="创建博客容器"><a href="#创建博客容器" class="headerlink" title="创建博客容器"></a>创建博客容器</h3><p>首先来到<a href="https://gitee.com/">Gitee</a>（有账号的就直接下一步，没有就注册一个）确保账号已经实名认证后进行下一步</p><p>点击右上角个人主页，记住个人主页地址</p><p><img src="https://pic.imgdb.cn/item/64c47b3f1ddac507ccbf6110.png"></p><p>点击+号新建一个仓库，名称随便填，<strong>路径需要输入个人主页地址</strong></p><h3 id="上传博客到容器中"><a href="#上传博客到容器中" class="headerlink" title="上传博客到容器中"></a>上传博客到容器中</h3><h4 id="配置云端"><a href="#配置云端" class="headerlink" title="配置云端"></a>配置云端</h4><p>找到<strong>Git全局设置</strong>，复制代码直接在Git窗口中运行</p><p>再将以下命令中的“邮箱地址”替换为Gitee注册邮箱</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C&quot;邮箱地址&quot;</span><br></pre></td></tr></table></figure><p>在<code>Overwrite</code>选项选择<code>y</code>，其余全部回车</p><p>再输入以下代码获取秘钥</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure><p>然后复制显示的秘钥，打开刚才创建的仓库，点击右上角菜单中的设置</p><p>在左侧点击SSH公钥，名称随便填，然后将复制的秘钥粘贴过来，点击确定，输入密码确认</p><p>然后在Git窗口中输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@gitee.com</span><br></pre></td></tr></table></figure><p>返回<strong>successfully</strong>代表成功</p><h4 id="配置本地端"><a href="#配置本地端" class="headerlink" title="配置本地端"></a>配置本地端</h4><p>来到博客根目录，右键打开<strong>config</strong>文件</p><p>最底部<code>type</code>项输入<code>git</code></p><p>在下一行输入<code>repository: </code>（冒号后面一定要有空格，不然会报错!!!）</p><p>来到刚才创建的仓库主页，最顶部点击SSH，复制代码粘贴到刚才<code>repository: </code>后面</p><p>最后运行</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p>就可以上传了</p><p>别忘了把仓库开源</p><h4 id="部署-1"><a href="#部署-1" class="headerlink" title="部署"></a>部署</h4><p>点击服务中的<strong>Gitee Pages</strong></p><p>勾选强制HTTPS，启动，等待完成后点击链接就可以访问了</p><h1 id="维护"><a href="#维护" class="headerlink" title="维护"></a>维护</h1><h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><p>启动<code>hexo s</code><br>加载<code>hexo g</code><br>部署<code>hexo d</code></p><h2 id="更新博客"><a href="#更新博客" class="headerlink" title="更新博客"></a>更新博客</h2><p>先<strong>hexo g</strong>生成网页</p><p><strong>hexo s</strong>开启本地服务器预览博客</p><p><strong>hexo d</strong>上传博客</p><p><strong>Gitee Pages</strong>点击更新，完成后访问博客刷新或清除缓存访问即可看到更新后的界面</p><h2 id="数据丢失（更换系统后搭建）"><a href="#数据丢失（更换系统后搭建）" class="headerlink" title="数据丢失（更换系统后搭建）"></a>数据丢失（更换系统后搭建）</h2><blockquote><p><font color=#900>此方法只适用于文章数据未丢失</font></p></blockquote><p>首先你要了解为什么直接迁移数据不可运行：</p><p>这是由于插件未安装的原因！</p><p>首先重新安装Hexo</p><p>重新安装主题插件</p><p>最重要的几步：</p><ol><li>由于更换了数据导致SSL秘钥失效</li></ol><p>再将以下命令中的“邮箱地址”替换为Gitee注册邮箱</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C&quot;邮箱地址&quot;</span><br></pre></td></tr></table></figure><p>在<code>Overwrite</code>选项选择<code>y</code>，其余全部回车</p><p>再输入以下代码获取秘钥</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure><p>然后复制显示的秘钥，打开刚才创建的仓库，点击右上角菜单中的设置</p><p>在左侧点击SSH公钥，名称随便填，然后将复制的秘钥粘贴过来，点击确定，输入密码确认</p><p>然后在Git窗口中输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@gitee.com</span><br></pre></td></tr></table></figure><p>返回<strong>successfully</strong>代表成功</p><ol start="2"><li>验证过期导致上传失败</li></ol><blockquote><p><font color=#900>这个步骤极其容易被忽略，但是这个步骤是必须的！</font></p></blockquote><p>运行</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p>就可以了</p><p>但是以上只是最重要的几步而已，下面是迁移文章数据</p><p>如果你有本地数据就进入blog文件夹内的<strong>\source_posts</strong>文件夹，里面存储了全部文章，迁移到新博客根目录的同名文件夹即可</p><p>如果么没有本地数据</p><p>就大结局了…</p><p>开玩笑的，这边建议大家还是做好备份，主题什么丢了都是小事，文章丢了就真的丢了！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> Blog </tag>
+            
+            <tag> 玖琳 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>要是我也有礼物该多好！</title>
+      <link href="/2023/08/30/%E8%A6%81%E6%98%AF%E6%88%91%E4%B9%9F%E6%9C%89%E7%A4%BC%E7%89%A9%E8%AF%A5%E5%A4%9A%E5%A5%BD%EF%BC%81/"/>
+      <url>/2023/08/30/%E8%A6%81%E6%98%AF%E6%88%91%E4%B9%9F%E6%9C%89%E7%A4%BC%E7%89%A9%E8%AF%A5%E5%A4%9A%E5%A5%BD%EF%BC%81/</url>
+      
+        <content type="html"><![CDATA[<h2 id="这个七夕和中元真的过的好差，感觉自己的人生走到尽头了一样，没什么希望了，真的…"><a href="#这个七夕和中元真的过的好差，感觉自己的人生走到尽头了一样，没什么希望了，真的…" class="headerlink" title="这个七夕和中元真的过的好差，感觉自己的人生走到尽头了一样，没什么希望了，真的…"></a>这个七夕和中元真的过的好差，感觉自己的人生走到尽头了一样，没什么希望了，真的…</h2><h3 id="其实我不会去在意礼物的价值的，我在乎的永远都是你！"><a href="#其实我不会去在意礼物的价值的，我在乎的永远都是你！" class="headerlink" title="其实我不会去在意礼物的价值的，我在乎的永远都是你！"></a>其实我不会去在意礼物的价值的，我在乎的永远都是你！</h3><h3 id="记住就好啦！"><a href="#记住就好啦！" class="headerlink" title="记住就好啦！"></a>记住就好啦！</h3><p><img src="https://pic.imgdb.cn/item/64ef3cbd661c6c8e54c05ccd.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常 </category>
+          
+          <category> 姐姐 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 玖琳 </tag>
+            
+            <tag> 姐姐 </tag>
+            
+            <tag> 日常 </tag>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第二章：小时候</title>
+      <link href="/2023/08/15/%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E5%B0%8F%E6%97%B6%E5%80%99/"/>
+      <url>/2023/08/15/%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E5%B0%8F%E6%97%B6%E5%80%99/</url>
+      
+        <content type="html"><![CDATA[<p>　　小时候爷爷说：“等我老了，就没人给你做饭了，所以你要学会煮饭，听到没有？”</p><p>　　那时候我一直以为这是句玩笑话，直到他看着我被我爸打的无处躲闪被打得快要死掉…</p><p>　　从那一刻我便下定决心要离开这个对于我来说充满恐惧的家，我不是在恐惧我爸，我恐惧的一直都是这个大屋子没有一点家的样子。</p><p>　　记得那时我脑海里想的是怎么死，就在这间屋子；这间屋子很冷清，很大，大到…我已经不再能像从前一样跑着跑着就撞到墙了；大到不真实。</p><p>　　这间屋子的大部分空间都被一个大沙发挡住了，而这个沙发现在就算是只有我坐上去也会感觉到空间的局促。是的，它只是在我心中很大，我对它的映像还停留在我在它上面怎么打滚都不会掉下来，那时候这个家还没有这么支离破碎。</p><p>　　沙发的对面是一个电视，挂在墙上不知道多久没换过，上面有一个黑色的小圆点：那是我爸打我的时候棍子的碎渣溅到上面造成的。这是液晶电视，这点损伤是不可逆的，里面的玻璃已经碎了，就像我的心：也已经碎了。但还能看，这点是令我惊喜的，也就像我的心：缝缝补补也不是不能给别人看。</p><p>　　以前每个家庭都少不了一个茶几，这个家当然也有，上面堆放着我的回忆，只要丢掉，便不复存在，我自然是不会这么做，我只是翻开了一个本子，里面写着：我喜欢你；我也喜欢你。可这都是过去式，那是我的青春和童年，在这些年间我曾无数次想找回童年，可是我没有意识到这本来就不现实：找回童年根本不可能。</p><p>　　我可能有某一瞬间也明白这不可能吧！但是试过总比不知道结果要好得多，是的吧！</p><p>　　在沙发圈起来的位置：冬天会摆着一个天然气炉子，我总是跪在那旁边，我也不知道为什么。</p><p>　　接受来自“爸爸”的审判，无只要他问一句，无论我答什么，都会避免不了的挨上一棍子。这棍子也不简单：这是四川有名的“黄金棍”，是给信奉“棍棒底下出孝子”的“家长”准备的。　　　　</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 亦书 </category>
+          
+          <category> 童颜幻想 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 写书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第一章：序-心解</title>
+      <link href="/2023/08/15/%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9A%E5%BA%8F-%E5%BF%83%E8%A7%A3/"/>
+      <url>/2023/08/15/%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9A%E5%BA%8F-%E5%BF%83%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<p>　　记得9岁那年我的经历是最为丰富的，每天都过得很浑浑噩噩，每天只要一吵架就想着怎么死。</p><p>　　那时候并不是真的想死，只是吵烦了，不想再听到家里人辱骂的声音了，现在看来还得是小时候没死了。</p><p>　　现在的我依旧在回味着所剩不多的对于童年的记忆，好像就在昨天。有句话说得好:“年轻的时候不去疯，等老了拿什么回忆！”，仔细一想还真是这样，等自己老了跟别人吹牛都没得吹，那该有多遗憾呢…<br>　　<br>不过我们还年轻，我们的资本也只有年轻，至少现在有所牵挂，不想一走了之，不是吗？</p><p>　　我很少会去听同龄人讲述自己小时候有多么多么的惨，因为我觉得其他人童年不会比自己的童年要惨。当然我知道没有人喜欢听别人拿小时候吹牛，所以我很少会提起童年来。<br>　　<br>写这本书的意义也在这，我觉得我快把童年忘了，我不想以后完全记不起童年来，我想把它记录下来！</p><p>　　那么童年是什么呢？</p><p>　　是牵挂，是陪伴，是喜欢，是…无法遗忘的她！</p><p>　　不要相信我在书里侃侃而谈的话术，实际上自己经历过才知道有多痛、多难受！</p><p>　　记得前面说过。</p><p>　　这本书不是用来看的，是用来记录童年的。</p><p>　　你需要知道我在书里写了什么，我相信只有这样你才不会说我写的有多么过分，甚至有些事我是往小了说的！</p><p>　　这本书主要写我的9岁到12岁的经历和遭遇，回忆起来是十分痛苦的，希望理解！</p><p>　　写这本书，纯属救赎自己，给自己童年一个交代！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 亦书 </category>
+          
+          <category> 童颜幻想 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 写书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MarkdownPadpro</title>
+      <link href="/2023/07/14/MarkdownPadpro/"/>
+      <url>/2023/07/14/MarkdownPadpro/</url>
+      
+        <content type="html"><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>这是一个非常好的Markdown编辑工具，只是pro版需要购买，在这里分享破解方法。</p><p>但这个方法我也不确定会在什么时候失效，只能说能用就先用着，失效了我也会想办法的。</p><p>但其实我们真的很少用这个，一方面是因为麻烦，另一方面是因为这个编辑器只适用于md语法，而我们接触的类型太多，需要编辑的太杂，自然而而然的就不适用了，在这方面我们更多的是选择<strong>VSC</strong>这类代码编辑器</p><h1 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h1><h3 id="邮箱（Email-address）：-x53-111-x61-x72-51-54-x30-64-108-105-x76-101-46-99-111-x6d-（或许可以随便填？）"><a href="#邮箱（Email-address）：-x53-111-x61-x72-51-54-x30-64-108-105-x76-101-46-99-111-x6d-（或许可以随便填？）" class="headerlink" title="邮箱（Email address）：&#x53;&#111;&#x61;&#x72;&#51;&#54;&#x30;&#64;&#108;&#105;&#x76;&#101;&#46;&#99;&#111;&#x6d;（或许可以随便填？）"></a>邮箱（Email address）：<strong><a href="mailto:&#x53;&#111;&#x61;&#x72;&#51;&#54;&#x30;&#64;&#108;&#105;&#x76;&#101;&#46;&#99;&#111;&#x6d;">&#x53;&#111;&#x61;&#x72;&#51;&#54;&#x30;&#64;&#108;&#105;&#x76;&#101;&#46;&#99;&#111;&#x6d;</a></strong>（或许可以随便填？）</h3><h3 id="秘钥（License-key）："><a href="#秘钥（License-key）：" class="headerlink" title="秘钥（License key）："></a>秘钥（License key）：</h3><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5/sQytXJUQl/QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb/ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8/eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ==</span><br></pre></td></tr></table></figure><p><img src="https://pic.imgdb.cn/item/64b15f141ddac507cc96ed31.png"></p><p><img src="https://pic.imgdb.cn/item/64b15f531ddac507cc984811.png"></p><h1 id="汉化"><a href="#汉化" class="headerlink" title="汉化"></a>汉化</h1><p>在汉化之前需要安装一个组件（awesomium_v1.6.6_sdk_win），不然会报错。</p><p>汉化直接在<strong>tools-&gt;options</strong></p><p><img src="https://pic.imgdb.cn/item/64b15ea11ddac507cc946f63.png"></p><p><img src="https://pic.imgdb.cn/item/64b15ec81ddac507cc955268.png"></p><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><a href="https://pan.xiaomuxi.cn/s/K24s7">点击下载</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>推荐浏览器</title>
+      <link href="/2023/07/11/%E6%8E%A8%E8%8D%90%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+      <url>/2023/07/11/%E6%8E%A8%E8%8D%90%E6%B5%8F%E8%A7%88%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>密码均为:114514</p></blockquote><h3 id="近期也是有人问我推荐什么浏览器比较好，这里推荐以下几款："><a href="#近期也是有人问我推荐什么浏览器比较好，这里推荐以下几款：" class="headerlink" title="近期也是有人问我推荐什么浏览器比较好，这里推荐以下几款："></a>近期也是有人问我推荐什么浏览器比较好，这里推荐以下几款：</h3><h3 id="（推荐的浏览器基本保持双端均可使用）"><a href="#（推荐的浏览器基本保持双端均可使用）" class="headerlink" title="（推荐的浏览器基本保持双端均可使用）"></a>（推荐的浏览器基本保持双端均可使用）</h3><h1 id="嗅觉浏览器"><a href="#嗅觉浏览器" class="headerlink" title="嗅觉浏览器"></a>嗅觉浏览器</h1><p>这是一款小众简洁类via浏览器，可安装via插件</p><p><a href="https://pan.xiaomuxi.cn/s/l5qUX">点击下载</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 资源 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>markdown</title>
+      <link href="/2023/07/09/markdown/"/>
+      <url>/2023/07/09/markdown/</url>
+      
+        <content type="html"><![CDATA[<h1 id="markdown-更简洁、更高效"><a href="#markdown-更简洁、更高效" class="headerlink" title="markdown - 更简洁、更高效"></a>markdown - 更简洁、更高效</h1><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br><em>窄屏幕下，可按Alt+滚轮横向滚动</em></p><p>很多人只把markdown用于网络文章发表，这糟蹋了markdown。<br>markdown不止是HTML的简化版，更重要的是txt的升级版、word的轻量版、笔记的最佳载体。<br>作为一种简单的格式标记语言，不同于txt的无格式，不同于HTML的复杂标记，也不同于word的鼠标调整样式。markdown通过简单的几个字符键入，就可以快捷的定义文档的样式。<br>比如在行首敲一个“#”，就把这行定义为了1级标题，并且在HBuilderX里有直观完善的着色，这样无需发布为web页面，可直接当word用。<br>掌握markdown，你可以完全抛弃txt和笔记软件的编辑器，并且在大多数场景下替代掉复杂臃肿的word。享受简洁之美、享受效率提升。<br>而HBuilderX，可以被称为最强大的markdown书写工具了。</p><p>下面的示例列举了markdown语法及对应的HBuilderX使用技巧：</p><p>开始前，可以先按下文档结构图的快捷键Alt+w（Mac是Ctrl+w），浏览本文的大纲。</p><h1 id="标题语法"><a href="#标题语法" class="headerlink" title="标题语法"></a>标题语法</h1><p>markdown的标题是行首以#号开头，空格分割的，不同级别的标题，在HX里着色也不同。如下：</p><h1 id="标题1"><a href="#标题1" class="headerlink" title="标题1"></a>标题1</h1><h2 id="标题2"><a href="#标题2" class="headerlink" title="标题2"></a>标题2</h2><h3 id="标题3"><a href="#标题3" class="headerlink" title="标题3"></a>标题3</h3><h4 id="标题4"><a href="#标题4" class="headerlink" title="标题4"></a>标题4</h4><h5 id="标题5"><a href="#标题5" class="headerlink" title="标题5"></a>标题5</h5><h6 id="标题6"><a href="#标题6" class="headerlink" title="标题6"></a>标题6</h6><p>标题使用技巧：</p><ol><li>Emmet快速输入：敲h2+Tab即可生成二级标题【同HTML里的emmet写法，不止标题，HX里所有可对应tag的markdown语法均支持emmet写法】。仅行首生效</li><li>智能双击：双击#号可选中整个标题段落</li><li>智能回车：行尾回车或行中Ctrl+Enter强制换行后会自动在下一行补#。而连续2次回车后将自动补的#去掉。(体验同word)</li><li>回车后再次按Tab可递进一层标题，再按Tab切换列表符</li><li>在# 后回车，可上插一个空标题行【同word】，或任意位置按Ctrl+Shift+Enter也可以上插空标题行</li><li>折叠：<ul><li>点标题前的-号可折叠该标题段落，快捷键是Alt+-（展开折叠是Alt+&#x3D;）</li><li>多层折叠时折叠或展开子节点，快捷键是Alt+Shift+-或&#x3D;</li><li>全文全部折叠或展开，快捷键是Ctrl+Alt+Shift+-或&#x3D;</li><li>折叠其他区域，快捷键是Alt+Shift+o。这对长文档管理非常有用，可以专注于当前章节</li><li>可以在菜单-跳转-折叠中随时找到这些功能</li></ul></li></ol><h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><p>markdown的列表支持有序列表、无序列表以及特殊的任务列表。<br>同样也是在行前加一个特殊符号，并空格后再跟列表文字内容。</p><h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>有序列表就是有顺序的列表，依靠行前的数字标记顺序。</p><ol><li>有序列表1 【设置或取消有序列表符的快捷键：Ctrl+Alt+1，可选中多行批量设置序号；支持多光标批量设置列表符，即按Ctrl+鼠标左键添加多光标】</li><li>有序列表2 【列表后回车会自动补序号】</li><li>有序列表3 【智能双击：双击前面的数字，可重新对数字排序，修正序号错误，并选中有序列表段落（左边的4是故意写错让你体验的）】</li></ol><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>无序列表就是列表不排序，无序列表因书写随意而被更广泛的使用。<br>无序列表有3种前缀，HX里分别用于表示1级列表、2级列表、3级列表。</p><ul><li>无序列表1 【快捷键：Ctrl+Alt+-；智能双击：双击-号可选中整段无序列表；再次按Tab会更换二级列表符】</li></ul><ul><li>无序列表2<ul><li>Emmet：li后敲Tab可生成*号列表符，行首生效</li><li>快捷键：Ctrl+Alt+8【8即*对应的数字】，支持多光标批量设置列表符，即按Ctrl+鼠标左键添加多光标</li><li>智能双击：双击*号可选中整段无序列表</li><li>智能回车：行尾回车或行中Ctrl+Enter强制换行后会自动续列表；连续按回车会清除列表符；再次按Tab会更换列表符；在列表符后回车或行尾Shift+回车，上一行留出列表符</li><li>*号常用于二级列表，列表符后继续Tab，可切换列表符</li></ul></li></ul><ul><li>无序列表3 【快捷键：Ctrl+Alt+&#x3D;；常用于三级列表；其他同上】</li></ul><h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2><p>任务列表非常实用，管理待办、已办非常便利。<br>[ ] 任务列表-未完成任务 【快捷键：Ctrl+Alt+[】<br>[x] 任务列表-已完成任务 【快捷键：Ctrl+Alt+]】<br>    1. 智能双击：双击方括号内可切换勾选状态，把任务标记为完成或未完成；双击方括号右侧可选中任务列表段落<br>    2. 智能回车：回车后自动补任务列表前缀符号；连续按回车清除前缀符号；在列表符后回车或行尾Shift+回车，上一行留出列表符</p><ul><li><input disabled="" type="checkbox"> 如需发布到web渲染，需增加无序列表- 的前缀</li></ul><p>以上三种列表，均支持批量修改列表符，有如下方式建议依次学习尝试：</p><ol><li>选中多行，按快捷键Ctrl+Alt+“1”或“-”或“[”或“]”，批量设置列表符</li><li>如果需要跳行设置有序或无序列表，通过Ctrl+鼠标左键点中目标多行（可不连续），产生多光标，然后按快捷键Ctrl+Alt+“1”或“-”或“[”或“]”，可跳行设置列表符，尤其是有序列表，数字也会跳行加1</li><li>按Alt+鼠标选中行首那列（列选择），这样每行行首都有光标，然后再键入或删除列表符即可批量操作</li><li>选中多行，按快捷键Ctrl+Shift+\（其实就是Ctrl+|），可以在每行行首添加一个光标</li></ol><h2 id="引用列表"><a href="#引用列表" class="headerlink" title="引用列表"></a>引用列表</h2><blockquote><p>引用1<br>引用2<br>快捷键：Ctrl+Alt+Shift+.<br>智能双击：双击&gt;号可选中整段引用列表<br>智能回车：行尾回车或行中Ctrl+Enter强制换行后会自动续列表；连续按回车会清除列表符；在列表符后回车或行尾Shift+回车，上一行留出列表符</p></blockquote><h1 id="文字样式语法"><a href="#文字样式语法" class="headerlink" title="文字样式语法"></a>文字样式语法</h1><p><strong>加粗</strong> 【快捷键：Ctrl+B，支持多光标；Emmet：b后敲Tab】<br><strong>加粗2</strong><br><em>倾斜_【Emmet：i后敲Tab；前后包围：选中文字按Ctrl+\是在选区两侧添加光标，可以继续输入_】<br><em>倾斜</em><br><del>删除线</del><br><code>单行代码</code><br>包围插入：先选中文字内容，然后按</em>*~&#96;等符号，会自动在2侧加包围<br>智能双击：双击语法区前面的定义符号，选中包含定义符的整段文字<br>去包围：选中整段文字后，按Ctrl+Shift+]，可去除2侧包围符号</p><p>引号括号虽然不属于markdown语法，但也支持相同的包围、选择、去包围操作。<br>引号括号智能双击选择时略特殊的是：双击引号括号内侧，选中引号括号里的内容(不含引号括号)；按下Alt+双击引号括号内侧，则选中包含符号的整段文字</p><p>HBuilderX还支持以下对2侧文本高效处理的手段</p><ol><li>选中文字按Ctrl+\是在选区两侧添加光标，可以继续输入~~，会在2侧同时输入</li><li>向2侧扩大选择：【Win:Alt+Shit+→ 、Mac:Ctrl++Shit+→】；由2侧向内减少选择：【Win:Alt+Shit+← 、Mac:Ctrl++Shit+←】</li></ol><p><a href="http://dcloud.io/">链接文字</a></p><ol><li>Emmet：a后敲Tab</li><li>打开链接：Alt+鼠标单击；如果是本地文件，可通过Shift+Alt+单击，在另一分栏打开文件</li><li>智能粘贴：粘贴URL会自动变成超链接格式；粘贴本地文件进来也会自动创建引用链接</li><li>智能双击：双击语法区开头，即[左侧，选中包含定义符的整段文字</li></ol><p><img src="/logo.jp" alt="图片描述文字"></p><ol><li>Emmet：img后敲Tab</li><li>智能粘贴：粘贴剪切板里的图形时会自动保存为本md文档的附件；删除文档中的图片语法，保存md文档时会自动删除对应的图片附件；粘贴图片文件时自动变成链接引用格式；</li><li>悬浮预览：鼠标移到图片语法上，本地图片会自动显示出来</li><li>智能双击：双击语法区开头，即!左侧，选中包含定义符的整段文字</li></ol><h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p>||||<br>|–|–|–|<br>||||<br>||||</p><ol><li>Emmet：table3*3后敲Tab，表示生成3行3列的表格，行首生效</li><li>md表格对齐是传统md的痛点，按下Ctrl+K可以自动整理表格格式（暂未兼容不同缩放模式和字体的情况）</li><li>支持从excel、wps、word、number的表格中复制粘贴表格进来（不支持合并单元格和单元格换行）</li><li></li></ol><h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><h1 id="————-【Emmet：hr后敲Tab】"><a href="#————-【Emmet：hr后敲Tab】" class="headerlink" title="————- 【Emmet：hr后敲Tab】*************"></a>————- 【Emmet：hr后敲Tab】<br>*************</h1><h1 id="代码区"><a href="#代码区" class="headerlink" title="代码区"></a>代码区</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="variable language_">document</span></span><br></pre></td></tr></table></figure><p>Emmet：code后敲Tab，行首生效<br>智能双击：双击语法区开头，即!左侧，选中包含定义符的整段文字<br>支持代码直接高亮着色，这应该是只有HBuilderX才有的功能。注意需要在代码区开头指定语言类型</p><h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><!--注释--> <p>快捷键：Ctrl+&#x2F;<br>智能双击：双击注释首尾的定义符，选中整段注释</p><h1 id="其他emmet快捷输入"><a href="#其他emmet快捷输入" class="headerlink" title="其他emmet快捷输入"></a>其他emmet快捷输入</h1><p>day后敲Tab，当前日期。注意day需在行首或前面有空格<br>time后敲Tab，当前时间。注意time需在行首或前面有空格</p><h1 id="文档结构图"><a href="#文档结构图" class="headerlink" title="文档结构图"></a>文档结构图</h1><p>文章很长时，word里有文档结构图，HBuilderX也有。<br>菜单视图-文档结构图，快捷键Alt+W(mac是ctrl+W)，轻松管理长文档</p><h1 id="运行、预览和打印PDF"><a href="#运行、预览和打印PDF" class="headerlink" title="运行、预览和打印PDF"></a>运行、预览和打印PDF</h1><p>对md文件点工具栏或菜单里的浏览器运行，可以使用外部浏览器预览此md文件，会自动渲染为HTML。<br>点右上角的预览【快捷键Alt+p】，可在HBuilderX右侧预览该md文档的HTML渲染结果。<br>在浏览器中点打印，选择打印到PDF，可将md输出为PDF格式。（注意在打印选项里去掉页眉页脚）</p><h1 id="一键分享"><a href="#一键分享" class="headerlink" title="一键分享"></a>一键分享</h1><p>markdown拥有迷人的输入体验，但分享并不方便，尤其是缺少免费、稳定、高速的图床。<br><a href="https://unicloud.dcloud.net.cn/">uniCloud</a>提供了免费、稳定、高速的服务器和cdn。<br>HBuilderX，基于uniCloud，提供了markdown的一键分享功能。</p><p>利用uniCloud的前端网页托管，将markdown稳定转成了HTML网页，并发布为在线的URL。您可以把URL发送给任何想要分享的人。<br>同时markdown里涉及的图片也会自动上传到前端网页托管里免费cdn中。</p><p>更多见: <a href="https://ask.dcloud.net.cn/article/37573">MarkDown一键分享使用说明</a></p><h1 id="其他常用但你可能不知道的快捷操作技巧"><a href="#其他常用但你可能不知道的快捷操作技巧" class="headerlink" title="其他常用但你可能不知道的快捷操作技巧"></a>其他常用但你可能不知道的快捷操作技巧</h1><ul><li>Ctrl+鼠标左键添加多光标，然后敲字或粘贴，可批量处理。Ctrl+鼠标左键拖选，可选中多个选区。</li><li>Ctrl+鼠标右键删除多光标</li><li>不选内容按Ctrl+C或X可复制或剪切整行</li><li>选中2个选区后，按Ctrl+Shift+X，可互换选区内容。如无选区，只是2个光标，则互换2行</li><li>Ctrl+上下键可上下移动行</li><li>Ctrl+Insert可重复插入当前行，如果有选中内容，可重复插入选中内容</li><li>Ctrl+Shift+K可合并多行（是格式化Ctrl+K的反操作）</li><li>删除<ul><li>按Ctrl+D可删除选中行，支持多光标</li><li>Shift+Del删除到行尾</li><li>Shift+Backspace删除到行首</li></ul></li><li>选择<ul><li>Ctrl+E选相同词(mac是Command+D)，连续按可选中多词进一步操作，比替换更方便</li><li>Ctrl+L可连选多行，Ctrl+Shift+L也是选择行，但不选行首尾的空白字符</li><li>Ctrl+&#x3D;可逐级放大选区</li><li>双击标题、列表符可选中相应段落</li><li>双击英文引号、括号内侧，可选中内部内容</li><li>双击缩进符，可选中同缩进段落</li><li>双击连字符比如-或_，可选中相连的词，比如双击这里试试，uni-app</li></ul></li><li>查找<ul><li>Ctrl+P查找文件</li><li>Ctrl+Alt+F可在当前目录的所有文档中搜索指定关键字(mac是Command+Shift+f)</li><li>选中文字按F3，查找下一个，Shift+F3找上一个</li></ul></li><li>云同步：HBuilderX+markdown用于云同步笔记的技巧，请参考<a href="http://ask.dcloud.net.cn/article/13097">http://ask.dcloud.net.cn/article/13097</a></li></ul><p>都学会了吗？<br>markdown语法其实很简单，认真学半小时就能掌握。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>作业</title>
+      <link href="/2023/07/09/%E4%BD%9C%E4%B8%9A/"/>
+      <url>/2023/07/09/%E4%BD%9C%E4%B8%9A/</url>
+      
+        <content type="html"><![CDATA[<p>　　距离开学只有2天。</p><p>　　也该忙一忙作业的事了，不过好在我已经写了不少，留下来的都是数学了。</p><p>　　突然想起来要买点零食回来，不然写作业会无聊死的。</p><p>　　找爷爷拿钱…….</p><p>　　拿到了10块，在现在也能买不少吃的了。</p><p>　　路上我还在想一会买什么，突然就被人叫住：“张天牧，吃了饭没有？”，我只是简单的回了一下便头也不回的走了，好像刚刚的事从来都没有发生过……</p><p>　　到了桥对岸的一个小卖部，里面有：一根葱，丑柑子之类我最喜欢的零食，但是身上只有10块，还是选择了买些糖，这样写作业的时候也能不无聊。</p><p>　　我从来对数学的态度都是潦草的，所以成绩自然也是不可能很高，属于平时课堂作业靠全靠抄，考试成绩属于中等偏上的那种。</p><p>　　这种状态做起数学作业来非常痛苦，直接就是该会的搞不懂，简单的蒙都能对，写了一天也是终于写完了，当时直接就累趴了，睡到第二天中午才起来，又想起来要去准备开学用的东西。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 亦书 </category>
+          
+          <category> 庚子琐事 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 写书 </tag>
+            
+            <tag> 庚子琐事 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网盘开放</title>
+      <link href="/2023/06/24/%E7%BD%91%E7%9B%98%E5%BC%80%E6%94%BE/"/>
+      <url>/2023/06/24/%E7%BD%91%E7%9B%98%E5%BC%80%E6%94%BE/</url>
+      
+        <content type="html"><![CDATA[<h3 id="兄弟们最近也是搞了个网盘"><a href="#兄弟们最近也是搞了个网盘" class="headerlink" title="兄弟们最近也是搞了个网盘"></a>兄弟们最近也是搞了个网盘</h3><h3 id="这个网盘本质上是属于图床的"><a href="#这个网盘本质上是属于图床的" class="headerlink" title="这个网盘本质上是属于图床的"></a>这个网盘本质上是属于图床的</h3><h3 id="空间无限制"><a href="#空间无限制" class="headerlink" title="空间无限制"></a>空间无限制</h3><h3 id="但是本质上是图床，所以有可能会限制大文件的上传和下载速度"><a href="#但是本质上是图床，所以有可能会限制大文件的上传和下载速度" class="headerlink" title="但是本质上是图床，所以有可能会限制大文件的上传和下载速度"></a>但是本质上是图床，所以有可能会限制大文件的上传和下载速度</h3><p><a href="http://linerpan.epxw.cn/">点我跳转图床</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 网盘 </tag>
+            
+            <tag> 图床 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>对最近的总结</title>
+      <link href="/2023/06/22/%E5%AF%B9%E6%9C%80%E8%BF%91%E7%9A%84%E6%80%BB%E7%BB%93/"/>
+      <url>/2023/06/22/%E5%AF%B9%E6%9C%80%E8%BF%91%E7%9A%84%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<p>首先对QQ空间动态通话记录做解读，以下是局部通话记录：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">她呢？</span><br><span class="line">她记得我的生日啊</span><br><span class="line">她呢？</span><br><span class="line">她不行…以前是以前了，现在跟她聊天感觉说不到一个点上</span><br><span class="line">她呢？</span><br><span class="line">她能知道我来找她干嘛，为什么一上来就说无聊</span><br><span class="line">她呢？</span><br><span class="line">她不行，只觉得为什么我每天都无聊</span><br><span class="line">她呢？</span><br><span class="line">她很好，有男朋友，甜甜的，每天都在玩，羡慕她</span><br><span class="line">她呢？</span><br><span class="line">她很好，现在有男朋友，每天作业很多</span><br><span class="line">她呢？</span><br><span class="line">你还她她她，有完没完？要死是吧？</span><br><span class="line">讲真的你两真的不合适，要是真的合适她会主动找话题的</span><br><span class="line">我也跟你讲真的，我真的不想放弃，哪怕她骗我，哪怕真的后来分开</span><br><span class="line">你不怕吗？</span><br><span class="line">怕啊，可是喜欢，我说过，时间会证明一切！</span><br><span class="line">怕你还坚持呢？你说时间会证明一切，可是你们两个的未来不是已经被证明了吗？</span><br><span class="line">可能是吧</span><br><span class="line">我只是想劝劝你，你自杀的时候我是在的，我不想你走老路，整天浑浑噩噩的</span><br><span class="line">可是</span><br><span class="line">可是什么？</span><br><span class="line">可是</span><br><span class="line">我问你可是什么？我还是那句话，得不到的就是得不到，没有必要强求，有时候退而求其次的结果也是结果，是吧？</span><br><span class="line">那你觉得我能放下吗？</span><br><span class="line">我觉得吧，说句难听点的你就是个傻逼你知道吗？你自己心里有结果你还来问，你有病吗？我知道你追寻爱情，可是这个年纪有什么真情啊？现实中都不太真实何况这里是网络，我跟你这么些日子了奥，我也知道你是个怎么样的人了，你也知道我是什么样的人了，就没必要多说，我还是劝你放下，就这样吧，挂了</span><br></pre></td></tr></table></figure><p>其实能读懂的，即使你不认识我，即使你压根不知道我是一个什么样的人，也能读懂</p><p>但其实这段话并不是有序的，正确顺序需要自己看穿</p><h2 id="自杀"><a href="#自杀" class="headerlink" title="自杀"></a>自杀</h2><p>我知道这听着很渗人，但是确实是要解释的。</p><p>这件事发生在2018年终旬，接近2019年，可以参考《庚子琐事》知道这年的事，多久写出来我就不知道了</p><h2 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h2><p>最近在想要不要出去玩，也在想以后怎么办</p><p>提前预告一下我可能还是会走老路</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 心情 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>看美女</title>
+      <link href="/2023/06/19/%E7%9C%8B%E7%BE%8E%E5%A5%B3/"/>
+      <url>/2023/06/19/%E7%9C%8B%E7%BE%8E%E5%A5%B3/</url>
+      
+        <content type="html"><![CDATA[<p>大家欣赏一下这位姐姐的<font color=#700>绝世容颜</font>(不是网图)</p><p><img src="https://pic.imgdb.cn/item/64901a861ddac507cc46023e.jpg"></p><p>好看吗？我觉得不好看</p><h3 id="是真不好看！！！"><a href="#是真不好看！！！" class="headerlink" title="是真不好看！！！"></a>是真不好看！！！</h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 姐姐 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>维修日志</title>
+      <link href="/2023/06/03/%E7%BB%B4%E4%BF%AE%E6%97%A5%E5%BF%97/"/>
+      <url>/2023/06/03/%E7%BB%B4%E4%BF%AE%E6%97%A5%E5%BF%97/</url>
+      
+        <content type="html"><![CDATA[<h3 id="目前服务器基本功能恢复正常，玩家可正常进入，添加插件："><a href="#目前服务器基本功能恢复正常，玩家可正常进入，添加插件：" class="headerlink" title="目前服务器基本功能恢复正常，玩家可正常进入，添加插件："></a>目前服务器基本功能恢复正常，玩家可正常进入，添加插件：</h3><ul><li><p>连锁采集</p></li><li><p>成就系统</p></li></ul><h3 id="恢复正常，其余插件请等待恢复"><a href="#恢复正常，其余插件请等待恢复" class="headerlink" title="恢复正常，其余插件请等待恢复"></a>恢复正常，其余插件请等待恢复</h3><p><img src="https://pic.imgdb.cn/item/647ac90bf024cca173aa6426.png"><br><img src="https://pic.imgdb.cn/item/647ac92bf024cca173aa7d79.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LW </category>
+          
+          <category> 运维 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 服务器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>资源</title>
+      <link href="/2023/05/31/%E8%B5%84%E6%BA%90/"/>
+      <url>/2023/05/31/%E8%B5%84%E6%BA%90/</url>
+      
+        <content type="html"><![CDATA[<h1 id="所有资源下载"><a href="#所有资源下载" class="headerlink" title="所有资源下载"></a>所有资源下载</h1><h2 id="密码统一为114514"><a href="#密码统一为114514" class="headerlink" title="密码统一为114514"></a>密码统一为<code>114514</code></h2><p><a href="https://pan.xiaomuxi.cn/s/gDCL">推荐下载</a></p><p><a href="https://www.123pan.com/s/TFbuVv-vbRBh.html">备用下载</a></p><p><a href="https://www.123pan.com/s/TFbuVv-vbRBh.html">备用下载</a>可能无法及时更新，非必要请使用<a href="https://pan.xiaomuxi.cn/s/gDCL">推荐下载</a>!</p><h1 id="以下内容请通过大纲查找！"><a href="#以下内容请通过大纲查找！" class="headerlink" title="以下内容请通过大纲查找！"></a>以下内容请通过大纲查找！</h1><h1 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h1><h2 id="桥梁建筑师"><a href="#桥梁建筑师" class="headerlink" title="桥梁建筑师"></a>桥梁建筑师</h2><p>一个造桥的游戏</p><p><a href="https://pan.xiaomuxi.cn/s/GG8iY">点击下载</a></p><h2 id="请出示证件-手机可用"><a href="#请出示证件-手机可用" class="headerlink" title="请出示证件[手机可用]"></a>请出示证件[手机可用]</h2><p>低配电脑高可玩性</p><p><a href="https://pan.xiaomuxi.cn/s/8eXId">点击下载</a></p><h2 id="西奥小镇-手机可用"><a href="#西奥小镇-手机可用" class="headerlink" title="西奥小镇[手机可用]"></a>西奥小镇[手机可用]</h2><p>被誉为手机版的都市天际线</p><p>手机版按音量+就可获得一定量钻石</p><p><a href="https://pan.xiaomuxi.cn/s/OJAiX">点击下载</a></p><h2 id="SFS-手机可用"><a href="#SFS-手机可用" class="headerlink" title="SFS[手机可用]"></a>SFS[手机可用]</h2><p>原StefMorojna.SpaceflightSimulator，简化为SFS</p><p>有故事</p><p><a href="https://pan.xiaomuxi.cn/s/z5bug">点击下载</a></p><p>无故事</p><p><a href="https://pan.xiaomuxi.cn/s/mNBtw">点击下载</a></p><h2 id="Minecraft-手机可用"><a href="#Minecraft-手机可用" class="headerlink" title="Minecraft[手机可用]"></a>Minecraft[手机可用]</h2><p>由于玖琳太懒不想写介绍，所以没有介绍…</p><p><a href="https://pan.xiaomuxi.cn/s/L0Mfo">点击下载</a></p><h2 id="史莱姆农场-手机可用"><a href="#史莱姆农场-手机可用" class="headerlink" title="史莱姆农场[手机可用]"></a>史莱姆农场[手机可用]</h2><p>目前电脑版资源暂时没找到，所以只有手机的资源</p><p>手机：<br><a href="https://pan.xiaomuxi.cn/s/Z6RtD">点击下载</a></p><h1 id="影音"><a href="#影音" class="headerlink" title="影音"></a>影音</h1><h2 id="7猫免费小说-手机可用-解锁会员"><a href="#7猫免费小说-手机可用-解锁会员" class="headerlink" title="7猫免费小说[手机可用][解锁会员]"></a>7猫免费小说[手机可用][解锁会员]</h2><p>解锁会员版</p><p><a href="https://pan.xiaomuxi.cn/s/z2Zcg">点击下载</a></p><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="MarkdownPadpro"><a href="#MarkdownPadpro" class="headerlink" title="MarkdownPadpro"></a>MarkdownPadpro</h2><p><a href="https://lineryyds.gitee.io/2023/07/14/MarkdownPadpro/">点击跳转</a></p><h2 id="Uninstall-Tool"><a href="#Uninstall-Tool" class="headerlink" title="Uninstall Tool"></a>Uninstall Tool</h2><p>卸载工具，解锁功能</p><p><a href="https://pan.xiaomuxi.cn/s/EJxfZ">点击下载</a></p><h2 id="流量监控器"><a href="#流量监控器" class="headerlink" title="流量监控器"></a>流量监控器</h2><p>原名TrafficMonitor，汉化为流量监控器</p><p><a href="https://pan.xiaomuxi.cn/s/p0MHo">点击下载</a></p><h2 id="Notepad"><a href="#Notepad" class="headerlink" title="Notepad++"></a>Notepad++</h2><p>强化版记事本，专用于代码类</p><p><a href="https://pan.xiaomuxi.cn/s/RjkSd">点击下载</a></p><h2 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome++"></a>Chrome++</h2><p>chrome浏览器的便携简化版，可以方便的把数据和应用一起导出</p><p><a href="https://pan.xiaomuxi.cn/s/N7Btm">点击下载</a></p><p>chrome离线安装包集合</p><p><a href="https://chrome.noki.eu.org/">点击下载</a></p><h2 id="VS-C"><a href="#VS-C" class="headerlink" title="VS C"></a>VS C</h2><p>原名Visual Studio Code简化为VS C</p><p>是一款代码编辑软件，可通过插件实现全能！</p><p><a href="https://pan.xiaomuxi.cn/s/0y7Hn">点击下载</a></p><h2 id="eclipse"><a href="#eclipse" class="headerlink" title="eclipse"></a>eclipse</h2><p>代码项目创建&#x2F;编辑工具</p><p><a href="https://pan.xiaomuxi.cn/s/azLFR">点击下载</a></p><h2 id="IDM"><a href="#IDM" class="headerlink" title="IDM"></a>IDM</h2><p>原名internetdownloadmanager，简化为IDM</p><p><a href="https://pan.xiaomuxi.cn/s/KNos7">点击下载</a></p><h1 id="本帖资源仅供参考"><a href="#本帖资源仅供参考" class="headerlink" title="本帖资源仅供参考"></a><del><font color=#700>本帖资源仅供参考</del></h1><h1 id="下载后请于24小时内删除"><a href="#下载后请于24小时内删除" class="headerlink" title="下载后请于24小时内删除"></a><del>下载后请于24小时内删除</del></h1><h1 id="请支持正版"><a href="#请支持正版" class="headerlink" title="请支持正版"></a><del>请支持正版</font></del></h1>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 玖琳 </tag>
+            
+            <tag> 资源 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第4章：原则（已补档）</title>
+      <link href="/2023/05/29/%E7%AC%AC4%E7%AB%A0%EF%BC%9A%E5%8E%9F%E5%88%99/"/>
+      <url>/2023/05/29/%E7%AC%AC4%E7%AB%A0%EF%BC%9A%E5%8E%9F%E5%88%99/</url>
+      
+        <content type="html"><![CDATA[<p>　　因为还有几天就开学了，加上这几天事情又特别多，各种酒席等着我们去吃，我自然是不可能再去处理网络上那点破事了。</p><p>　　“在吗？”有一个在我心中分量很重的人找上了我：陳逸加，他在当时红极一时，我自然也是不太敢懈怠。“在的”“有什么事吗？”</p><p>　　“你最好无论如何都要把那件事情解决掉，不然你和你的所有成就都会消失”</p><p>　　一会后……</p><p>　　“我不在乎，让它随风去呗，再说了这些是我能解决的吗？”</p><p>　　在回他消息之前我其实想了很久。</p><p>　　但这些破事确实不是我惹出来的，我凭什么解决。至于我自己那些辉煌成就？我是真的不在乎，对于我来说离开了网络也能活，我不依靠网络，所以我可以任性的解决这些跟我的生活没有太大关系的事。</p><p>　　“你想好，这件事后果很严重！”</p><p>　　“想好了，真的不重要”</p><p>　　“嗯”</p><p>　　他说完这句话之后就把我拉黑了，我还在疑惑的时候快手传来了消息。</p><p>　　“您的账号已被封禁（请联系快手管理员解除）”</p><p>　　其实这完全在我的意料之内，毕竟因为这件事老板已经进去了。</p><p>　　如果我没猜错的话下一个就是QQ了。</p><p>　　但是它居然没有被封禁，这让我很意外，准备问一下什么情况，但是所有有关这件事的人和群都把我拉黑删除了，我不理解。</p><p>　　这时候再看网上关于我的事，也没有任何资料了，甚至连我这个人的资料都在网上直接消失了，好像我从来没有出现在网络上一样。</p><p>　　此时我心里的疑问并不大，因为这些事我都有预料到，也有应对的方法。</p><p>　　我又看了看微信，收到一笔转账，我刚想查看账号却被封禁。</p><p>　　我登上另一个微信号，这里也有一笔来自同一个人的转账：是他。</p><p>　　我并没有急着接受，因为在这转账的下面有一个要求：销毁你在互联网上的一切，不管官方有没有察觉到你都必须销毁掉账号，收下这笔钱我会监督你。</p><p>　　这笔钱对于我的诱惑显然是很大，但是我不想收，留下来的账号是我最后的底线了，我不想放弃这最后一点留下回忆的种子。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 亦书 </category>
+          
+          <category> 庚子琐事 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 写书 </tag>
+            
+            <tag> 庚子琐事 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>上动车喽</title>
+      <link href="/2023/05/26/%E4%B8%8A%E5%8A%A8%E8%BD%A6%E5%96%BD/"/>
+      <url>/2023/05/26/%E4%B8%8A%E5%8A%A8%E8%BD%A6%E5%96%BD/</url>
+      
+        <content type="html"><![CDATA[<h3 id="上动车了"><a href="#上动车了" class="headerlink" title="上动车了"></a>上动车了</h3><p><img src="https://pic1.imgdb.cn/item/64705e76f024cca17337468e.jpg" alt="动车上"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 路途记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>回-四川</title>
+      <link href="/2023/05/26/%E5%9B%9E-%E5%9B%9B%E5%B7%9D/"/>
+      <url>/2023/05/26/%E5%9B%9E-%E5%9B%9B%E5%B7%9D/</url>
+      
+        <content type="html"><![CDATA[<h2 id="家乡四川"><a href="#家乡四川" class="headerlink" title="家乡四川"></a>家乡四川</h2><h3 id="这次我又为什么回去呢"><a href="#这次我又为什么回去呢" class="headerlink" title="这次我又为什么回去呢"></a>这次我又为什么回去呢</h3><p>对你们撒个谎，这次回去是打暑假工</p><p>像我姐一样，提前一个月，最后玩一个月！</p><h4 id="但这次回去我也是带着目的的，并不是完全回去啥事都不干，我们立志于现在，努力经营好这个博客，将来这个博客一定能有更多的内容的"><a href="#但这次回去我也是带着目的的，并不是完全回去啥事都不干，我们立志于现在，努力经营好这个博客，将来这个博客一定能有更多的内容的" class="headerlink" title="但这次回去我也是带着目的的，并不是完全回去啥事都不干，我们立志于现在，努力经营好这个博客，将来这个博客一定能有更多的内容的"></a>但这次回去我也是带着目的的，并不是完全回去啥事都不干，我们立志于现在，努力经营好这个博客，将来这个博客一定能有更多的内容的</h4><h2 id="家乡，我来了！"><a href="#家乡，我来了！" class="headerlink" title="家乡，我来了！"></a>家乡，我来了！</h2><h1 id="行程安排"><a href="#行程安排" class="headerlink" title="行程安排"></a>行程安排</h1><p>我们今天下午3点的动车票</p><p>到重庆待一晚上就回达州</p><p><img src="https://pic1.imgdb.cn/item/647028cef024cca173d062cb.jpg" alt="四川"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 路途记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第2章：家？是什么样的啊？</title>
+      <link href="/2023/05/25/%E7%AC%AC2%E7%AB%A0%EF%BC%9A%E5%AE%B6%EF%BC%9F%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%95%8A%EF%BC%9F/"/>
+      <url>/2023/05/25/%E7%AC%AC2%E7%AB%A0%EF%BC%9A%E5%AE%B6%EF%BC%9F%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%95%8A%EF%BC%9F/</url>
+      
+        <content type="html"><![CDATA[<p>　　我的脑海里不停闪过一个人：那个一开始就抛弃我的人-我的母亲。</p><p>　　自从她和我家尊离婚之后就再没有过消息，连一句基本的问候都没有，但这段时间貌似很频繁，但我都没有接电话，为这事还被家尊打过。现在想想当时接一下电话等待的可能也未必是谩骂呢。</p><p>　　可惜一切都过去了，母亲在我脑海里也停留在对我最好的那时候。</p><p>　　这个家，于是说是家，不如说是一个巨大的牢笼，这个牢笼的主人在下一盘大棋，我就好比是这笼中鸟一样，只要被抛弃，就是无处可去了。现在即便是没有被抛弃，也等同于被抛弃了…</p><p>　　这个家环境很好，往下一走到柏油路就算是镇上，也正是这个原因，我们这里还属于地地道道的农村。上来的路是一个巨大的坡，最陡的地方超过了五十度，如果这里没有我们的房子，那路只会更难走。</p><p>　　一直往上，过了我们的几栋房屋就是一个巨大的河沟，但迎接我们的是一个平角转弯，转过去是下面房屋的2-3楼。跨度很大，但也营造了很多我们小时候流连忘返的地方，比如家门对着的那一个废弃的房屋地基。我的童年也就是在里面到处钻，从那废地基正北对过去是一片菜地，我们的童年在那里。</p><p>　　还记得以前偷偷上去玩踩坏了人家菜，还不承认，最后被找家长教训。那时多好，无忧无虑，逍遥自在，也没人管得住，因为那时家长对于我们来说就是全部的蓝天。</p><p>　　回到家，一样的冷清、死寂，只有一股酒味，也不知道爷爷又喝了多少酒。</p><p>　　打开房间门，依然是熟悉的手机碎片，仿佛家尊还没走般。我的心猛然一颤，莫名的害怕涌上心头，促使着我关上房间门，坐到书桌前，打开台灯，看着一桌的狼藉：那是一生的痛，一生的心结，或许我一生恨他。</p><p>　　突然我的QQ有人打电话给我，我赶忙拿出手机来，是QQ群电话，我便也不再理会，这时他们再出什么岔子已经跟我没有任何关系了，我只需要处理好我自己快手和其他平台的舆论就好。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 亦书 </category>
+          
+          <category> 庚子琐事 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 写书 </tag>
+            
+            <tag> 庚子琐事 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第1章：或许这就是我</title>
+      <link href="/2023/05/25/%E7%AC%AC1%E7%AB%A0%EF%BC%9A%E6%88%96%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E6%88%91/"/>
+      <url>/2023/05/25/%E7%AC%AC1%E7%AB%A0%EF%BC%9A%E6%88%96%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E6%88%91/</url>
+      
+        <content type="html"><![CDATA[<p>　　新的一天，或许不是新的开始吧！</p><p>　　“牧牧”</p><p>　　好似有人在喊我，是我爷爷吗？</p><p>　　“张天牧，过来帮我拿这个东西一下”</p><p>　　我终于确定，是爷爷在喊我！我放下手机，快步来到厨房，帮着爷爷拿起坛子盖，以后就没有我什么事了于是我便继续看起了群里的消息。</p><p>　　虽然我还小，才10岁，但是已经学会了不少编程语法，但受制于手机，并不能有多大的成果。</p><p>　　但今天出事了！</p><p>　　我们负责的一个项目牵扯到法律了！要知道那时可没有什么人能压得住这种消息，于是在短短不到5分钟的时间里，这件事就被3000多人的大群往外传了个遍，这种级别的舆论压力我们的公关根本不可能顶得住，当时的消息是：“某公司招收小孩程序员，结果创下弥天大祸！”</p><p>　　到这时已经没时间顾及社会舆论压力了，他们只想着怎么跑，跑了之后怎么办？</p><p>　　但我丝毫没有那种危机感，还在淡定悠闲打着当时很火的“王者荣耀”，那时这个圈子很清纯，很清澈，正是这种网络比现实还要好的错觉，让我流连忘返。</p><p>　　很快就有人通知我这件事，但我还是不怎么有感触，因为这是公司的事，跟我并没有太大关系，这件事的原委也是那个公司。</p><p>　　这时我的快手可谓热闹非凡啊，有很多声讨我的声音，其中呼声最大的是问我：为什么要加入这家公司，没有读过法吗。我当然没有读过，我只是一个小学生而已！</p><p>　　这时我觉得累极了，想出去走走。</p><p>　　到了楼梯间，我用头一遍遍地撞着墙，在墙上刻下“再见了这个世界”</p><p>　　我又来到家旁边的河沟旁，望着能有30多米高的悬崖，心里想的却是跳下去能不能死。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 亦书 </category>
+          
+          <category> 庚子琐事 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 写书 </tag>
+            
+            <tag> 庚子琐事 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>起源：庚子琐事</title>
+      <link href="/2023/05/25/%E8%B5%B7%E6%BA%90%EF%BC%9A%E5%BA%9A%E5%AD%90%E7%90%90%E4%BA%8B/"/>
+      <url>/2023/05/25/%E8%B5%B7%E6%BA%90%EF%BC%9A%E5%BA%9A%E5%AD%90%E7%90%90%E4%BA%8B/</url>
+      
+        <content type="html"><![CDATA[<p>“我走了，你在家里好好过吧！“</p><p>这貌似是他很熟悉的一句话，但是现在极其陌生且复杂，昨晚的事他好似已经忘却，可又残存着对家尊的恨</p><p>声明一点！这些事全部都是个人真实经历，不要为了这些能写出来的数据纠结！</p><p>围绕重点“家尊“</p><p>侧重“学校“</p><p>作为孩子，不应该写一些伤害家人的话，这些我当然清楚，但恨之入骨-不是写写书把他的丑事公之于众就能解决的！</p><p><img src="https://pic1.imgdb.cn/item/646e42030d2dde5777986ab2.png" alt="庚子琐事"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 庚子琐事 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>新的开始，眺望过去</title>
+      <link href="/2023/05/25/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B%EF%BC%8C%E7%9C%BA%E6%9C%9B%E8%BF%87%E5%8E%BB/"/>
+      <url>/2023/05/25/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B%EF%BC%8C%E7%9C%BA%E6%9C%9B%E8%BF%87%E5%8E%BB/</url>
+      
+        <content type="html"><![CDATA[<p>“怎么那么想哭啊，心里好难受啊，或许这就是我的人生吧！任命吧，别反抗了”。</p><p>他在脑海中想着。</p><p>不知谁在这时推开了他的房门，是家尊。</p><p>“你自己好好想想吧！你明天给我答复！要是没有答复我才好好收拾你！”。</p><p>家尊说完这句话就直接摔门回房间了。</p><p>他脑海中一直闪过今晚的经历和刚刚家尊对他说的话，心里的恐惧被无限放大，身体也在精神和外力的摧残下抖起来。他很想再次睡着，因为梦里是一个全新的世界，那里没有家尊，但是有她，他记忆里被家尊要求他强行抛弃的那个她，他还是一成不变得爱着她。</p><p>昨天他还在逍遥又快活，但是就在那天晚上，他的梦碎了，被家尊无情得踩在脚下，在家尊弹指间，他和她的一切归零了，不留一点痕迹！或许这就是一个十几岁少年应该经历的吧！但他依旧不死心，心里想着她会不会看着红色感叹号发呆，想着还能不能再见到她。</p><p>但过了一会他的心也碎了，在那一瞬间，萌生出了自缢的冲动，猛的跑到茶几前拿起水果刀想就此了结一生，可是哪有那么容易啊，他又被家尊一把拉住扔到地上。家尊调侃着说：“跑啊，怎么不跑了，打开门跑出去”说着，家尊把门打开，戏谑的看着他，趴在地上痛苦的他“跑嘛，门都给你打开了，你个废物，们给你打开你都不跑”这时他冲出去，但紧接着的就是几公分粗的棍子招呼。</p><p>他倦了，那一刻他真的倦了，他看透了眼前的家尊，一个比他还要废物的废物，他也曾看着被这个所谓家尊撕碎的引以为豪的画作疑惑：他们小时候没有过重要的东西吗？那可真好啊，不用担心有人拿这些东西要挟自己。</p><p>他也曾疑惑过家尊为什么这样，他替家尊眺望过这段婚姻，分明是母亲的错，为什么他要搞的像他也有错一样？带着诸多疑惑，他好想在此刻化为尘埃，但他无意间听见家尊明天就要走，但真实性不确定…</p><p>转眼明天就到了。</p><p>房门再一次被猛地推开，又是家尊！</p><p>“快点爬起来，我要走了你都不送送我啊？！”</p><p>家尊说着又一边关着门，他得知这个消息并没有太惊喜，他之前经历过无数次家尊走了又跑回来…迅速穿好衣服后就帮家尊拿行李下了楼，车来了，家尊走了！</p><p>他哭了，他想着昨晚的事，无论怎么打他都没有哭，但现在他哭了，他想清楚了，他终归只是一个十几岁的小屁孩而已，他下定决心要开始新的生活，同时在心里埋下了一颗逃离家尊的种子。</p><p>他带着颓废和无助回到家，看着地上不知是什么的碎片。</p><p>“好像爷爷还没回来”</p><p>他说着，往爷爷房间走去，但爷爷在里面睡觉，爷爷从未睡得这么晚。</p><p>他便叹了口气，自己一个人去看了电视，但电视里的情节又让他眼眶里全是泪水。他也不想这样，可是精神创伤哪有那么容易磨灭！</p><p>傍晚爷爷来房间找他了，问他要吃什么，他只是随口说了随便，这是从小就养成的，来源于一次家尊请他买东西吃饭，他只是想要自己喜欢的，家尊便说吃点有营养的东西，那时他心里想：我又不是老年人，凭什么要多吃有营养的！</p><p>今天吃的是红烧肉，很好吃，好吃到足以让人流泪。</p><p>他并不是那种一味追求梦想的人，如果有什么大的挫折，那他大概率也会放弃。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 亦书 </category>
+          
+          <category> 庚子琐事 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 写书 </tag>
+            
+            <tag> 庚子琐事 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>服务器崩溃</title>
+      <link href="/2023/05/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B4%A9%E6%BA%83/"/>
+      <url>/2023/05/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B4%A9%E6%BA%83/</url>
+      
+        <content type="html"><![CDATA[<p>服务器出现不明报错，8点由于不可抗力直接崩溃。</p><p>目测是有人删错了文件导致的，报错信息如下：</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span>Pterodactyl Daemon<span class="punctuation">]</span><span class="punctuation">:</span> Checking server disk space usage<span class="punctuation">,</span> this could take a few seconds...</span><br><span class="line"><span class="punctuation">[</span>Pterodactyl Daemon<span class="punctuation">]</span><span class="punctuation">:</span> Updating process configuration files...</span><br><span class="line"><span class="punctuation">[</span>Pterodactyl Daemon<span class="punctuation">]</span><span class="punctuation">:</span> Ensuring file permissions are set correctly<span class="punctuation">,</span> this could take a few seconds...</span><br><span class="line">container@pterodactyl~ 服务器运行状态更新为<span class="punctuation">:</span> starting...</span><br><span class="line"><span class="punctuation">[</span>Pterodactyl Daemon<span class="punctuation">]</span><span class="punctuation">:</span> Pulling Docker container image<span class="punctuation">,</span> this could take a few minutes to complete...</span><br><span class="line"><span class="punctuation">[</span>Pterodactyl Daemon<span class="punctuation">]</span><span class="punctuation">:</span> Finished pulling Docker container image</span><br><span class="line">welcome</span><br><span class="line">Running on Debian bullseye/sid</span><br><span class="line">Current timezone<span class="punctuation">:</span> Etc/UTC</span><br><span class="line">wine<span class="number">-8.0</span></span><br><span class="line"><span class="punctuation">:</span>/home/container$ wine bedrock_server_mod.exe</span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Can&#x27;t load LiteLoader.dll !</span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Error code<span class="punctuation">:</span> <span class="number">126</span> !</span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Module not found.</span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> INFO <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> PreLoader is running as DLL Loader...</span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Fail to load plugin <span class="punctuation">[</span>Advancements.dll<span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Error<span class="punctuation">:</span> Code<span class="punctuation">[</span><span class="number">126</span><span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Fail to load plugin <span class="punctuation">[</span>BackupHelper.dll<span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Error<span class="punctuation">:</span> Code<span class="punctuation">[</span><span class="number">126</span><span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Fail to load plugin <span class="punctuation">[</span>ChainMiner.dll<span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Error<span class="punctuation">:</span> Code<span class="punctuation">[</span><span class="number">126</span><span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Fail to load plugin <span class="punctuation">[</span>CustomMapX.dll<span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Error<span class="punctuation">:</span> Code<span class="punctuation">[</span><span class="number">126</span><span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Fail to load plugin <span class="punctuation">[</span>DeathMessages.dll<span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Error<span class="punctuation">:</span> Code<span class="punctuation">[</span><span class="number">126</span><span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Fail to load plugin <span class="punctuation">[</span>DisconnectScreen.dll<span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Error<span class="punctuation">:</span> Code<span class="punctuation">[</span><span class="number">126</span><span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Fail to load plugin <span class="punctuation">[</span>IkunAdvancementsPack.dll<span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Error<span class="punctuation">:</span> Code<span class="punctuation">[</span><span class="number">126</span><span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Fail to load plugin <span class="punctuation">[</span>LLMoney.dll<span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Error<span class="punctuation">:</span> Code<span class="punctuation">[</span><span class="number">126</span><span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Fail to load plugin <span class="punctuation">[</span>MovingLight.dll<span class="punctuation">]</span></span><br><span class="line"><span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">12</span> ERROR <span class="punctuation">[</span>PreLoader<span class="punctuation">]</span> Error<span class="punctuation">:</span> Code<span class="punctuation">[</span><span class="number">126</span><span class="punctuation">]</span></span><br><span class="line">NO LOG FILE! - setting up server logging...</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">13</span><span class="punctuation">:</span><span class="number">507</span> INFO<span class="punctuation">]</span> Starting Server</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">13</span><span class="punctuation">:</span><span class="number">508</span> INFO<span class="punctuation">]</span> Version <span class="number">1.19</span><span class="number">.81</span><span class="number">.01</span></span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">13</span><span class="punctuation">:</span><span class="number">508</span> INFO<span class="punctuation">]</span> Session ID <span class="number">1742e1</span>df-dc13<span class="number">-445</span>a-bcdd<span class="number">-3</span>bf083b20fb1</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">13</span><span class="punctuation">:</span><span class="number">508</span> INFO<span class="punctuation">]</span> Build ID <span class="number">1.19</span><span class="number">.81</span></span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">13</span><span class="punctuation">:</span><span class="number">509</span> INFO<span class="punctuation">]</span> Branch r/<span class="number">19</span>_u8</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">13</span><span class="punctuation">:</span><span class="number">509</span> INFO<span class="punctuation">]</span> Commit ID <span class="number">2606</span>f6a1a1e3ecf907cb776d138dac765c5ba3ff</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">13</span><span class="punctuation">:</span><span class="number">510</span> INFO<span class="punctuation">]</span> Configuration Publish</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">13</span><span class="punctuation">:</span><span class="number">513</span> INFO<span class="punctuation">]</span> Level Name<span class="punctuation">:</span> Despair</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">13</span><span class="punctuation">:</span><span class="number">598</span> INFO<span class="punctuation">]</span> Game mode<span class="punctuation">:</span> <span class="number">0</span> Survival</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">13</span><span class="punctuation">:</span><span class="number">598</span> INFO<span class="punctuation">]</span> Difficulty<span class="punctuation">:</span> <span class="number">3</span> HARD</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">14</span><span class="punctuation">:</span><span class="number">829</span> INFO<span class="punctuation">]</span> Experiment(s) active<span class="punctuation">:</span> ddi_<span class="punctuation">,</span> biom<span class="punctuation">,</span> ucft<span class="punctuation">,</span> gtst<span class="punctuation">,</span> mola<span class="punctuation">,</span> sttc</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">14</span><span class="punctuation">:</span><span class="number">829</span> INFO<span class="punctuation">]</span> opening worlds/Despair/db</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">20</span><span class="punctuation">:</span><span class="number">335</span> INFO<span class="punctuation">]</span> IPv4 supported<span class="punctuation">,</span> port<span class="punctuation">:</span> <span class="number">22228</span><span class="punctuation">:</span> Used for gameplay</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">20</span><span class="punctuation">:</span><span class="number">336</span> INFO<span class="punctuation">]</span> IPv6 supported<span class="punctuation">,</span> port<span class="punctuation">:</span> <span class="number">19133</span><span class="punctuation">:</span> Used for gameplay</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">21</span><span class="punctuation">:</span><span class="number">218</span> INFO<span class="punctuation">]</span> Server started.</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">21</span><span class="punctuation">:</span><span class="number">218</span> INFO<span class="punctuation">]</span> ================ TELEMETRY MESSAGE ===================</span><br><span class="line">container@pterodactyl~ 服务器运行状态更新为<span class="punctuation">:</span> running...</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">21</span><span class="punctuation">:</span><span class="number">218</span> INFO<span class="punctuation">]</span> Server Telemetry is currently not enabled.</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">21</span><span class="punctuation">:</span><span class="number">218</span> INFO<span class="punctuation">]</span> Enabling this telemetry helps us improve the game.</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">21</span><span class="punctuation">:</span><span class="number">218</span> INFO<span class="punctuation">]</span></span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">21</span><span class="punctuation">:</span><span class="number">219</span> INFO<span class="punctuation">]</span> To enable this feature<span class="punctuation">,</span> add the line &#x27;emit-server-telemetry=<span class="literal"><span class="keyword">true</span></span>&#x27;</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">21</span><span class="punctuation">:</span><span class="number">219</span> INFO<span class="punctuation">]</span> to the server.properties file in the handheld/src-server directory</span><br><span class="line">NO LOG FILE! - <span class="punctuation">[</span><span class="number">2023</span><span class="number">-05</span><span class="number">-23</span> <span class="number">13</span><span class="punctuation">:</span><span class="number">40</span><span class="punctuation">:</span><span class="number">21</span><span class="punctuation">:</span><span class="number">219</span> INFO<span class="punctuation">]</span> ======================================================</span><br></pre></td></tr></table></figure><h2 id="请耐心等待服务器恢复"><a href="#请耐心等待服务器恢复" class="headerlink" title="请耐心等待服务器恢复"></a>请耐心等待服务器恢复</h2><h1 id="抱歉"><a href="#抱歉" class="headerlink" title="抱歉"></a>抱歉</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> LW </category>
+          
+          <category> 运维 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Minecraft </tag>
+            
+            <tag> 服务器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Lin-World</title>
+      <link href="/2023/05/23/Lin-World/"/>
+      <url>/2023/05/23/Lin-World/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>通知：<font color=#900>由于个人原因，服务器由公益变为私有（详情请下滑查看）！</font></p></blockquote><h1 id="公告"><a href="#公告" class="headerlink" title="公告"></a>公告</h1><p>由于服务器变为私有，因此你需要到玖琳的<a href="https://afdian.net/a/liner025202">爱发电</a>主页捐赠以获取白名单！</p><p>请注意！</p><p>服务器随时可能关闭下发数据！请保证你提供的邮箱是可用的！</p><h2 id="服务器状态"><a href="#服务器状态" class="headerlink" title="服务器状态"></a>服务器状态</h2><blockquote><p>正常</p></blockquote><h2 id="端口和地址"><a href="#端口和地址" class="headerlink" title="端口和地址"></a>端口和地址</h2><h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">play.simpfun.cn</span><br></pre></td></tr></table></figure><h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20207</span><br></pre></td></tr></table></figure><h1 id="游戏版本"><a href="#游戏版本" class="headerlink" title="游戏版本"></a>游戏版本</h1><h2 id="1-20-10-1-20-13"><a href="#1-20-10-1-20-13" class="headerlink" title="&gt; 1.20.10-1.20.13"></a>&gt; 1.20.10-1.20.13</h2><h1 id="游戏下载"><a href="#游戏下载" class="headerlink" title="游戏下载"></a>游戏下载</h1><p><del><font color=#700>在此我们只提供几种下载参考的链接!</del></p><p><del>仅供学习参考使用,切勿用于非法用途!</del></p><p><del>下载后请于48小时内删除!!</font></del></p><h2 id="Minebbs-MB的YYT一辈子没朋友"><a href="#Minebbs-MB的YYT一辈子没朋友" class="headerlink" title="Minebbs(MB的YYT一辈子没朋友!!!)"></a>Minebbs(MB的YYT一辈子没朋友!!!)</h2><p><a href="https://mc.minebbs.com/">minebbs</a></p><h2 id="Klpbbs-苦力怕论坛"><a href="#Klpbbs-苦力怕论坛" class="headerlink" title="Klpbbs(苦力怕论坛)"></a>Klpbbs(苦力怕论坛)</h2><p><a href="https://xz.klpbbs.net/">klpbbs</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LW </category>
+          
+          <category> 公告 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 玖琳 </tag>
+            
+            <tag> Minecraft </tag>
+            
+            <tag> 公告 </tag>
+            
+            <tag> 我的世界 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
